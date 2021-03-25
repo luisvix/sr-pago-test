@@ -19,4 +19,4 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/users', usersRouter)
 app.use('/movies', moviesRouter)
 
-app.listen(constants.port, ()=>console.log(`Starting server in port ${constants.port}`))
+app.listen(process.env.PORT || 8080, ()=>console.log(`Starting server in port ${constants.port}`))
