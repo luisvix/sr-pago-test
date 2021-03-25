@@ -1,10 +1,10 @@
 const mysql = require('mysql')
 
 const {
-  TOKEN_KEY = 'MySecretKeyForToken',
-  MYSQL_DATABASE = 'srPago',
-  MYSQL_USER= 'srPago',
-  MYSQL_PASSWORD = 'srPagoPassword',
+  TOKEN_KEY,
+  MYSQL_DATABASE,
+  MYSQL_USER,
+  MYSQL_PASSWORD,
   CLOUD_SQL_CONNECTION
 } = process.env
 
