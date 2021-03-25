@@ -1,0 +1,885 @@
+{
+	"info": {
+		"_postman_id": "f7b5c9a8-c4b7-47b3-86db-2aee9defa453",
+		"name": "Sr pago test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Create new User (SingUp)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testPass",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "my new test user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://sr-pago-api-6saxahvira-uc.a.run.app/users",
+							"protocol": "https",
+							"host": [
+								"sr-pago-api-6saxahvira-uc",
+								"a",
+								"run",
+								"app"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test2",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testPass",
+											"type": "text"
+										},
+										{
+											"key": "fullName",
+											"value": "my new test user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Mar 2021 05:52:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "user previously created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testPass",
+											"type": "text"
+										},
+										{
+											"key": "fullName",
+											"value": "my new test user",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61-sMHGkWr7FiI6rFZv0fnj6+xck1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Mar 2021 05:48:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Usuario registrado anteriormente, prueba iniciando sesión.\",\n    \"error\": \"Default error\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get a token (Sign In)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "testPass",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://sr-pago-api-6saxahvira-uc.a.run.app/users/getToken",
+							"protocol": "https",
+							"host": [
+								"sr-pago-api-6saxahvira-uc",
+								"a",
+								"run",
+								"app"
+							],
+							"path": [
+								"users",
+								"getToken"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "testPass",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/users/getToken",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"getToken"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "429"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ad-+zfBv9QUVqMwigEHTzjRlChDvdI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Mar 2021 06:31:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"insertedDate\": {\n            \"milliseconds\": 1616586464000,\n            \"completeNumericNoTime\": \"24/3/2021\"\n        },\n        \"username\": \"test\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJpbnNlcnRlZERhdGUiOnsibWlsbGlzZWNvbmRzIjoxNjE2NTg2NDY0MDAwLCJjb21wbGV0ZU51bWVyaWNOb1RpbWUiOiIyNC8zLzIwMjEifSwidXNlcm5hbWUiOiJ0ZXN0In0sImV4cGlyYXRpb25EYXRlIjoxNjE2OTk5NDg0MDAxLCJpYXQiOjE2MTY1Njc0ODR9.pCnQKC5oNox2VGqQCmsR9cdh7lQUoCeoOyCoz0bPGxo\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Book a movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJpbnNlcnRlZERhdGUiOnsibWlsbGlzZWNvbmRzIjoxNjE2NTg2NDY0MDAwLCJjb21wbGV0ZU51bWVyaWNOb1RpbWUiOiIyNC8zLzIwMjEifSwidXNlcm5hbWUiOiJ0ZXN0In0sImV4cGlyYXRpb25EYXRlIjoxNjE2OTk5NDg0MDAxLCJpYXQiOjE2MTY1Njc0ODR9.pCnQKC5oNox2VGqQCmsR9cdh7lQUoCeoOyCoz0bPGxo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://sr-pago-api-6saxahvira-uc.a.run.app/users/:userId/movies/:movieId/showtimes/:showtimeId",
+							"protocol": "https",
+							"host": [
+								"sr-pago-api-6saxahvira-uc",
+								"a",
+								"run",
+								"app"
+							],
+							"path": [
+								"users",
+								":userId",
+								"movies",
+								":movieId",
+								"showtimes",
+								":showtimeId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "movieId",
+									"value": "1"
+								},
+								{
+									"key": "showtimeId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/:userId/movies/:movieId/showtimes/:showtimeId",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										":userId",
+										"movies",
+										":movieId",
+										"showtimes",
+										":showtimeId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "12"
+										},
+										{
+											"key": "movieId",
+											"value": "1"
+										},
+										{
+											"key": "showtimeId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-QSor7AFFf0SxiUB7+8roMBYOX1I\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Mar 2021 03:42:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El usuario al que intestas agregar la película es diferente de tu usuario actual, favor de verificar.\",\n    \"error\": \"Default error\"\n}"
+						},
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/:userId/movies/:movieId/showtimes/:showtimeId",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										":userId",
+										"movies",
+										":movieId",
+										"showtimes",
+										":showtimeId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "1"
+										},
+										{
+											"key": "movieId",
+											"value": "1"
+										},
+										{
+											"key": "showtimeId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8-M1u4Sc28uxk+zyXJvSTJaEkyIGw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Mar 2021 03:32:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "List of my booking movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJpbnNlcnRlZERhdGUiOnsibWlsbGlzZWNvbmRzIjoxNjE2NTg2NDY0MDAwLCJjb21wbGV0ZU51bWVyaWNOb1RpbWUiOiIyNC8zLzIwMjEifSwidXNlcm5hbWUiOiJ0ZXN0In0sImV4cGlyYXRpb25EYXRlIjoxNjE2OTk5NDg0MDAxLCJpYXQiOjE2MTY1Njc0ODR9.pCnQKC5oNox2VGqQCmsR9cdh7lQUoCeoOyCoz0bPGxo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sr-pago-api-6saxahvira-uc.a.run.app/users/:userId/movies",
+							"protocol": "https",
+							"host": [
+								"sr-pago-api-6saxahvira-uc",
+								"a",
+								"run",
+								"app"
+							],
+							"path": [
+								"users",
+								":userId",
+								"movies"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user validation error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/:userId/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										":userId",
+										"movies"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "140"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8c-QSor7AFFf0SxiUB7+8roMBYOX1I\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Mar 2021 03:48:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"El usuario al que intestas agregar la película es diferente de tu usuario actual, favor de verificar.\",\n    \"error\": \"Default error\"\n}"
+						},
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/users/:userId/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										":userId",
+										"movies"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1389"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56d-oSNjE74BCbpuKE4VyjfAHOzrqkw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Mar 2021 03:47:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bookingMovies\": [\n        {\n            \"id\": 1,\n            \"insertedDate\": {\n                \"milliseconds\": 1616664764000,\n                \"completeNumeric\": \"25/3/2021 3:32:44\",\n                \"completeNumericNoTime\": \"25/3/2021\"\n            },\n            \"movie\": {\n                \"id\": 1,\n                \"title\": \"Godzilla vs. Kong\",\n                \"categories\": \"Action/Fantasy/Sci-Fi/Thriller\",\n                \"imageUrl\": \"https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxMWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00300988-ztlvumjbwr-portrait.jpg\",\n                \"city\": \"MEXICO\"\n            },\n            \"showtime\": {\n                \"place\": \"cinepolis cdmx\",\n                \"showDate\": {\n                    \"milliseconds\": 1616949000000,\n                    \"completeNumeric\": \"28/3/2021 10:30:0\",\n                    \"completeNumericNoTime\": \"28/3/2021\"\n                }\n            }\n        },\n        {\n            \"id\": 2,\n            \"insertedDate\": {\n                \"milliseconds\": 1616664771000,\n                \"completeNumeric\": \"25/3/2021 3:32:51\",\n                \"completeNumericNoTime\": \"25/3/2021\"\n            },\n            \"movie\": {\n                \"id\": 1,\n                \"title\": \"Godzilla vs. Kong\",\n                \"categories\": \"Action/Fantasy/Sci-Fi/Thriller\",\n                \"imageUrl\": \"https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxMWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00300988-ztlvumjbwr-portrait.jpg\",\n                \"city\": \"MEXICO\"\n            },\n            \"showtime\": {\n                \"place\": \"cinemex cdmx\",\n                \"showDate\": {\n                    \"milliseconds\": 1616952600000,\n                    \"completeNumeric\": \"28/3/2021 11:30:0\",\n                    \"completeNumericNoTime\": \"28/3/2021\"\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "movies",
+			"item": [
+				{
+					"name": "List of movies per city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sr-pago-api-6saxahvira-uc.a.run.app/movies?city=MEXICO",
+							"protocol": "https",
+							"host": [
+								"sr-pago-api-6saxahvira-uc",
+								"a",
+								"run",
+								"app"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "MEXICO"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies?city=MEXICO",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "city",
+											"value": "MEXICO"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1344"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"540-R0Y0M7RaO8cHfO9OyMv1chHVkfA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Mar 2021 07:15:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"movies\": [\n        {\n            \"id\": 1,\n            \"title\": \"Godzilla vs. Kong\",\n            \"categories\": \"Action/Fantasy/Sci-Fi/Thriller\",\n            \"imageUrl\": \"https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxMWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00300988-ztlvumjbwr-portrait.jpg\",\n            \"city\": \"MEXICO\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Mumbai Saga\",\n            \"categories\": \"Action/Crime\",\n            \"imageUrl\": \"https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzElICA3ayB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00105043-cdzqsuyaen-portrait.jpg\",\n            \"city\": \"MEXICO\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Roohi\",\n            \"categories\": \"Comedy/Horror\",\n            \"imageUrl\": \"https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NjIlICAxOGsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00099813-qezjeuczpr-portrait.jpg\",\n            \"city\": \"MEXICO\"\n        },\n        {\n            \"id\": 10,\n            \"title\": \"The Courier\",\n            \"categories\": \"Thriller \",\n            \"imageUrl\": \"https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/the-courier-et00137324-17-03-2021-04-08-25.jpg\",\n            \"city\": \"MEXICO\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get detail of a movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sr-pago-api-6saxahvira-uc.a.run.app/movies/:movieId",
+							"protocol": "https",
+							"host": [
+								"sr-pago-api-6saxahvira-uc",
+								"a",
+								"run",
+								"app"
+							],
+							"path": [
+								"movies",
+								":movieId"
+							],
+							"variable": [
+								{
+									"key": "movieId",
+									"value": "sdfase"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "movie not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/:movieId",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										":movieId"
+									],
+									"variable": [
+										{
+											"key": "movieId",
+											"value": "sdfase"
+										}
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-f50NkCjamnBVJOzpe5J2ZvD9Aog\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Mar 2021 15:56:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"La película que seleccionaste no existe.\",\n    \"error\": \"Default error\"\n}"
+						},
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/movies/:movieId",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies",
+										":movieId"
+									],
+									"variable": [
+										{
+											"key": "movieId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "869"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"365-Dfor49AhhuqVIYjwYXc19l8iwF8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 24 Mar 2021 15:55:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"movie\": {\n        \"id\": 1,\n        \"title\": \"Godzilla vs. Kong\",\n        \"categories\": \"Action/Fantasy/Sci-Fi/Thriller\",\n        \"imageUrl\": \"https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@heart_202006300400.png,ox-24,oy-617,ow-29:ote-NzglICAxMWsgdm90ZXM%3D,ots-29,otc-FFFFFF,oy-612,ox-70/et00300988-ztlvumjbwr-portrait.jpg\",\n        \"city\": \"MEXICO\",\n        \"showtimes\": [\n            {\n                \"id\": 1,\n                \"place\": \"cinepolis cdmx\",\n                \"showDate\": {\n                    \"milliseconds\": 1616949000000,\n                    \"completeNumeric\": \"28/3/2021 10:30:0\",\n                    \"completeNumericNoTime\": \"28/3/2021\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"place\": \"cinemex cdmx\",\n                \"showDate\": {\n                    \"milliseconds\": 1616952600000,\n                    \"completeNumeric\": \"28/3/2021 11:30:0\",\n                    \"completeNumericNoTime\": \"28/3/2021\"\n                }\n            },\n            {\n                \"id\": 3,\n                \"place\": \"cinepolis polanco\",\n                \"showDate\": {\n                    \"milliseconds\": 1616956200000,\n                    \"completeNumeric\": \"28/3/2021 12:30:0\",\n                    \"completeNumericNoTime\": \"28/3/2021\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
