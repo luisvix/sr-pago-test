@@ -6,11 +6,11 @@ const {
   MYSQL_USER,
   MYSQL_PASSWORD,
   CLOUD_SQL_CONNECTION,
-  PORT
+  CUSTOM_PORT
 } = process.env
 
 const constants = {
-  port: PORT || 8080,
+  port: CUSTOM_PORT || 8081,
   tokensExpirationTime: (5 * 24 * 60 * 60 * 1000),  //days * hours * minutes * seconds * milliseconds
   tokenSecurityKey: TOKEN_KEY
 }
